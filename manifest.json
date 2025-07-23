@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Dan Murphy's Auto Loader",
+  "version": "1.0",
+  "description": "Automatically clicks 'Show 24 more' buttons on Dan Murphy's craft beer page",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.danmurphys.com.au/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Dan Murphy's Auto Loader"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.danmurphys.com.au/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+} 

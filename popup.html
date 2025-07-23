@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dan Murphy's Auto Loader</title>
+  <style>
+    body {
+      width: 320px;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      text-align: center;
+    }
+    button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+    .download-btn {
+      background-color: #2196F3;
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+    .download-btn.csv {
+      background-color: #4CAF50;
+    }
+    .download-btn.json {
+      background-color: #FF9800;
+    }
+    .status {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 4px;
+    }
+    .running {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    .stopped {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+    .info {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #666;
+    }
+    .download-section {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #f8f9fa;
+      border-radius: 4px;
+      border: 1px solid #dee2e6;
+    }
+    .download-section h4 {
+      margin: 0 0 10px 0;
+      color: #333;
+      font-size: 14px;
+    }
+    .progress-info {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3>Dan Murphy's Auto Loader</h3>
+    <p>Automatically loads all products by clicking "Show 24 more" buttons</p>
+    
+    <button id="startBtn">Start Auto Loading</button>
+    <button id="stopBtn" disabled>Stop Auto Loading</button>
+    
+    <div id="status" class="status stopped">
+      Status: Stopped
+    </div>
+    
+    <div id="downloadSection" class="download-section" style="display: none;">
+      <h4>Download Progress</h4>
+      <div id="progressInfo" class="progress-info">Ready to download</div>
+      <button id="downloadCsvBtn" class="download-btn csv">Download CSV</button>
+      <button id="downloadJsonBtn" class="download-btn json">Download JSON</button>
+    </div>
+    
+    <div id="info" class="info">
+      <p>Click "Start Auto Loading" when you're on the Dan Murphy's craft beer page</p>
+      <p>This will automatically click all "Show 24 more" buttons to load all products</p>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html> 
